@@ -118,6 +118,7 @@ button, a, input {
   width: 100%;
   position: relative;
   margin-top: 1rem;
+  padding-top: 2rem;
 }
 
 #logo {
@@ -143,7 +144,7 @@ button, a, input {
 
 #user-menu-button > img {
   display: flex;
-  height: 100%;
+  height: 10%;
   border-radius: inherit;
 }
 
@@ -152,6 +153,7 @@ button, a, input {
   gap: 0.2rem;
   margin-top: 0.2rem;  
   height: rem;
+  padding-bottom: 5px;
 }
 
 #search-input-container > input,
@@ -174,11 +176,44 @@ button, a, input {
   height: 5rem;
 }
 
-#search-container > #image-button {  
-  border-bottom-right-radius: 0.5rem;
+.search-container2 {
+  position: relative;
+  display: inline-block;
 }
 
+#search-input {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  box-shadow:  rgb(255 255 255 / 16%);
+  background-color:  rgba(255, 255, 255, 0);
+}
 
+.suggestions {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 1;
+  width: 30rem;
+  background-color:  rgb(36, 37, 48);;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px  rgb(255 255 255 / 16%);
+  color: white;
+}
+
+.suggestion {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: rgb(36, 37, 48);;;
+}
 #search-input-container {
   display: flex;
   align-items: center;
@@ -203,7 +238,7 @@ button, a, input {
 }
 
 #search-brand-container {
-  padding-bottom: 1rem;
+  padding-bottom: 0px;
 }
 #search-brand-container > button {
   background-color: rgb(255 255 255 / 10%);
@@ -420,8 +455,7 @@ button, a, input {
 .social-button::after {
   content: '';
   position: absolute;
-  top: -1px;
-  left: 50%;
+  top: 2px;
   display: block;
   width: 0;
   height: 0;

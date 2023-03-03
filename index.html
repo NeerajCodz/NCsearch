@@ -1,22 +1,19 @@
- <head>
+<html>
+  <head>
+    <meta charset="utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/NeerajCodz/NCsearch/main/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-<!-- partial:index.partial.html -->
 
-  <div id="main-wrapper" class="fancy-scrollbar">
+<div id="nav-placeholder"></div>
+
+  <div id="main-wrapper" class="fancy-scrollbar">  
     <div id="main">
-      <div id="content">
-        <div id="links-container"  style="padding-left: 30%; padding-right: 30%;">
-          <a href="https://gmail.com" target="_blank">Gmail</a>
-          <a href="https://github.com" target="_blank">GitHub</a>
-          <a href="https://drive.google.com" target="_blank">Drive</a>
-          <a href="http://ncsearch.web.app" target="_blank">My site</a>
-          <a href="https://github.com/NeerajCodz" target="_blank">About</a>
-          <img src="/logo.png" style="height: 50px;" alt="" />   
-        </div>
-      <div class="mycontainer" style="padding-left: 30%; padding-right: 30%; padding-top: 1%;">
+      <div class="mycontainer" style="padding-left: 30%; padding-right: 30%; padding-top: 0%;">
         <div id="header-container">
           <div class='parent'>
             <div class='child'><main>
@@ -54,61 +51,50 @@
               </a>
             </div></div>
           </div>
-          
-        
- 
         </div>
+        
+        <div id="search-brand-container" style="margin-top: 2%;">
+          <button id="search-image-button" onclick="googleImage();" type="button">
+          <i class="fa-regular fa-image"></i>
+          </button>
+          <button id="search-video-button" onclick="googleVideo();" type="button">
+          <i class="fa-regular fa-video"></i>
+          </button>
+          <button id="search-video-button" onclick="WikipediaSearch();" type="button">
+            <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+          </button>
+          <button id="search-gmail-button" onclick="GmailSearch();" type="button">
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+          <button id="search-youtube-button" onclick="YoutubeSearch();" type="button">
+          <i class="fa-brands fa-youtube"></i>
+          </button>
+          <button id="search-maps-button" onclick="MapsSearch();" type="button">
+            <i class="fa-regular fa-map-marker"></i>
+          </button>
+          <button id="search-amazon-button" onclick="AmazonSearch();" type="button">
+            <i class="fa-brands fa-amazon"></i>
+          </button>
+          <button id="search-spotifty-button" onclick="SpotifySearch();" type="button">
+            <i class="fa-brands fa-spotify"></i>
+          </button>
+          <button id="search-github-button" onclick="GithubSearch();" type="button">
+            <i class="fa-brands fa-github"></i>
+          </button>
+        </div>
+
         <div id="search-container" style="margin-top: 2%;">
           <div id="search-input-container">
             <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="" />
-            <input type="text" placeholder="Search anything" id="search" />
-            <script>
-              var input = document.getElementById("search");
-              input.addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                  event.preventDefault();
-                  document.getElementById("image-search-button").click();
-                }
-              });
-              </script>
+            <div class="search-container2">
+              <input type="text" id="search-input" placeholder="Search Anything and anywhere">
+              <div class="suggestions"></div>
+            </div>
           </div>
-          
-          
           <button id="image-search-button" onclick="googleSearch();" type="button">
             <i class="fa-regular fa-search"></i>
           </button>     
-          </div>
-
-
-          <div id="search-brand-container" style="margin-top: 2%;">
-            <button id="search-image-button" onclick="googleImage();" type="button">
-            <i class="fa-regular fa-image"></i>
-            </button>
-            <button id="search-video-button" onclick="googleVideo();" type="button">
-            <i class="fa-regular fa-video"></i>
-            </button>
-            <button id="search-video-button" onclick="WikipediaSearch();" type="button">
-              <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
-            </button>
-            <button id="search-gmail-button" onclick="GmailSearch();" type="button">
-              <i class="fa-regular fa-envelope"></i>
-            </button>
-            <button id="search-youtube-button" onclick="YoutubeSearch();" type="button">
-            <i class="fa-brands fa-youtube"></i>
-            </button>
-            <button id="search-maps-button" onclick="MapsSearch();" type="button">
-              <i class="fa-regular fa-map-marker"></i>
-            </button>
-            <button id="search-amazon-button" onclick="AmazonSearch();" type="button">
-              <i class="fa-brands fa-amazon"></i>
-            </button>
-            <button id="search-spotifty-button" onclick="SpotifySearch();" type="button">
-              <i class="fa-brands fa-spotify"></i>
-            </button>
-            <button id="search-github-button" onclick="GithubSearch();" type="button">
-              <i class="fa-brands fa-github"></i>
-            </button>
-          </div>
+        </div>
     </div>
     <div class="appmycontainer" style="padding-left: 15%; padding-right: 15%; padding-top: 1%;">
       <div id="apps-container">
@@ -260,84 +246,14 @@
       </a>
     </div>
     <div id="footer_logo" style="padding-left: 45%; padding-right: 50%; padding-top: 1%;">
-      <img src="/footer_logo.png"style="height: 30%;" class="centre" >
+      <img src="/images/footer_logo.png"style="height: 30%;" class="centre" >
     </div>
    </div>
   </div>
 </div>
-<!-- partial -->
-  <script>
-    function googleSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='http://www.google.com/search?q='+cleanQuery;
-        window.open(url, '_blank');
-    }
-    function googleImage()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='http://www.google.com/search?q='+cleanQuery+'&tbm=isch';
-         window.open(url, '_blank');
-    }
-    function googleVideo()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='http://www.google.com/search?q='+cleanQuery+'&tbm=vid';
-         window.open(url, '_blank');
-    }
-    function WikipediaSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='https://en.wikipedia.org/wiki/Special:Search?go=Go&search='+cleanQuery;
-         window.open(url, '_blank');
-    }
-    function GmailSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='https://mail.google.com/mail/u/0/#search/'+cleanQuery;
-         window.open(url, '_blank');
-    }
-    function YoutubeSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='https://www.youtube.com/results?search_query='+cleanQuery;
-         window.open(url, '_blank');
-    }
-    function MapsSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='https://www.google.com/maps/search/'+cleanQuery;
-         window.open(url, '_blank');
-    }
-    function SpotifySearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","%20",text);
-        var url='https://open.spotify.com/search/'+cleanQuery;
-         window.open(url, '_blank');
-    }
-    function AmazonSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='https://www.amazon.in/s?k='+cleanQuery;
-         window.open(url, '_blank');
-    }
-    function GithubSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='https://github.com/search?q='+cleanQuery;
-         window.open(url, '_blank');
-    }
-    </script>
-  <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
-</body>
 
+  <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
+  <script src="script.js"></script>
+  <script src="/nav/jquery-1.10.2.js"></script>
+</body>
+</html>

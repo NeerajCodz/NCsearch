@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Bar with Suggestions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .search-container {
+      position: relative;
+      display: inline-block;
+    }
+    #search {
+      width: 100%;
+      padding: 10px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+    }
+    button[type="submit"] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    button[type="submit"] i {
+      color: #fff;
+    }
+    .suggestions {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      z-index: 999;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      display: none;
+    }
+    .suggestion {
+      padding: 10px;
+      cursor: pointer;
+    }
+    .suggestion:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="search-container">
+  <form action="#">
+    <input type="text" id="search" placeholder="Search...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <div class="suggestions"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $(document).ready(function() {
+  var debounceTimer;
+
+  $('#search').on('input', function() {
+    var query = $(this).val();
+    if (query.length >= 2) {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        var suggestURL = 'https://suggestqueries.google.com/complete/search?client=firefox&q=' + query;
+        $.ajax({
+          type: 'GET',
+          url: 'https://api.allorigins.win/get?url=' + encodeURIComponent(suggestURL),
+          dataType: 'json',
+          success: function(data) {
+            var suggestions = JSON.parse(data.contents)[1];
+            if (suggestions.length > 0) {
+              $('.suggestions').empty();
+              $.each(suggestions, function(i, val) {
+                $('<div class="suggestion"></div>').text(val).appendTo('.suggestions');
+              });
+              $('.suggestions').slideDown();
+            }
+          }
+        });
+      }, 500);
+    } else {
+      $('.suggestions').slideUp();
+    }
+  });
+
+  $(document).on('click', '.suggestion', function() {
+    var text = $(this).text();
+    $('#search').val(text);
+    $('.suggestions').slideUp();
+  });
+});
+
+</script>
+
+</body>
+</html>
