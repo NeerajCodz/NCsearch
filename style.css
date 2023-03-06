@@ -193,7 +193,7 @@ button, a, input {
   background-color:  rgba(255, 255, 255, 0);
 }
 
-.suggestions {
+.suggestionz {
   display: none;
   position: absolute;
   top: 35px;
@@ -206,6 +206,23 @@ button, a, input {
   color: white;
 }
 
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  color: white;
+  border-top: none;
+  border-radius: 5px;
+  background-color:  rgb(36, 37, 48);;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.175);
+  z-index: 999;
+  display: none;
+  max-height: 16rem; /* Set maximum height for the suggestions box */
+  overflow-y: auto; /* Add a scrollbar when the suggestions box exceeds its maximum height */
+  width: 30rem; /* Make the suggestions box width 100% */
+}
+
 .suggestion {
   padding: 5px;
   cursor: pointer;
@@ -214,6 +231,24 @@ button, a, input {
 .suggestion:hover {
   background-color: rgb(36, 37, 48);;;
 }
+
+.suggestions::-webkit-scrollbar {
+  width: 10px; /* Set width of the scrollbar */
+}
+
+.suggestions::-webkit-scrollbar-track {
+  background-color: #525252; /* Set background color of the scrollbar track */
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Set background color of the scrollbar thumb */
+  border-radius: 4px; /* Add border-radius to the scrollbar thumb */
+}
+
+.suggestions::-webkit-scrollbar-thumb:hover {
+  background-color: #393939; /* Set background color of the scrollbar thumb when hovered */
+}
+
 #search-input-container {
   display: flex;
   align-items: center;
@@ -257,7 +292,6 @@ button, a, input {
   grid-template-columns: repeat(4, 25%);  
   margin: 3rem 0rem;
 }
-
 #apps-container > a {
   display: flex;
   align-items: center;
@@ -267,7 +301,6 @@ button, a, input {
   border-radius: 0.2rem;
   text-decoration: none;
 }
-
 #apps-container > a > i {
   height: 2rem; 
   width: 2rem; 
@@ -276,7 +309,6 @@ button, a, input {
   line-height: 2rem; 
   text-align: center;
 }
-
 #apps-container > a > .label {
   width: calc(100% - 2.5rem);
   display: flex;
@@ -285,54 +317,23 @@ button, a, input {
   overflow: hidden;
 }
 
+#appmycontainer{
+  padding-left: 15%; 
+  padding-right: 15%; 
+  padding-top: 1%;
+}
 #apps-container > a > .label > :is(.name, .url) {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-
 #apps-container > a > .label > .name {
   font-size: 0.8rem;
 }
-
 #apps-container > a > .label > .url {
   font-size: 0.7rem;
   color: rgb(255 255 255 / 50%);
-}
-
-#apps-container > a:is(:hover, :focus) {
-  background-color: rgb(255 255 255 / 16%);
-}
-
-#apps-container > a:first-child {
-  border-top-left-radius: 0.5rem;
-}
-
-#apps-container > a:nth-child(2) {  
-  color: rgb(255, 0, 0);
-  border-top-right-radius: 0.5rem;
-}
-
-#apps-container > a:nth-child(3) {  
-  color: rgb(28, 204, 91);
-}
-
-#apps-container > a:nth-child(4) {  
-  color: rgb(28, 147, 228);
-}
-
-#apps-container > a:nth-child(5) {  
-  color: rgb(242, 85, 90);
-}
-
-#apps-container > a:nth-child(7) {  
-  border-bottom-left-radius: 0.5rem;
-}
-
-#apps-container > a:last-child {
-  color: rgb(15, 118, 14);
-  border-bottom-right-radius: 0.5rem; 
 }
 
 #footer_logo {
@@ -435,8 +436,9 @@ button, a, input {
 .social-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
+  justify-content: center;
   gap: 8px;
+  padding-top: 1rem;
 
 }
 .social-button {
@@ -739,13 +741,13 @@ main::after {
   content: '';
   display: block;
   position: absolute;
-  top: 115%;
+  top: 100%;
   left: 0;
   width: var(--atom-size);
   height: var(--nucleus-size);
   background-image: radial-gradient(closest-side, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
   border-radius: 100%;
-  transform: scale(1, .8);
+  transform: scale(0.5, .2);
   animation: 8s shadow infinite cubic-bezier(1, .25, 0, .75);
 }
 @keyframes shadow {
@@ -786,9 +788,8 @@ a:hover {
   background: rgba(0, 0, 0, .5);
 }
 .parent {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
+  margin: 1px;
+  padding: 5px 5px;
   text-align: center;
 }
 .child {

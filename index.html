@@ -1,9 +1,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/NeerajCodz/NCsearch/main/favicon.ico">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -16,18 +18,7 @@
       <div class="mycontainer" style="padding-left: 30%; padding-right: 30%; padding-top: 0%;">
         <div id="header-container">
           <div class='parent'>
-            <div class='child'><main>
-              <div class="atom">
-                  <div class="electron"></div>
-                  <div class="electron-alpha"></div>
-                  <div class="electron-omega"></div>
-              </div>
-          </main></div>
-            <div class='child'>  <button type="button" id="user-menu-button" style="margin-right: 10%; margin-top: 10%;">
-  
-            </button>
             <div class="social-buttons">
-  
               <a href="https://www.instagram.com/" class="social-button social-button--instagram" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
               </a>
@@ -49,9 +40,17 @@
               <a href="https://codepen.io/NeerajCodz" class="social-button social-button--codepen" aria-label="CodePen">
                 <i class="fab fa-codepen"></i>
               </a>
-            </div></div>
+            </div>
+            <div class='child'><main>
+              <div class="atom">
+                  <div class="electron"></div>
+                  <div class="electron-alpha"></div>
+                  <div class="electron-omega"></div>
+              </div>
+            </main>
           </div>
         </div>
+      </div>
         
         <div id="search-brand-container" style="margin-top: 2%;">
           <button id="search-image-button" onclick="googleImage();" type="button">
@@ -96,7 +95,7 @@
           </button>     
         </div>
     </div>
-    <div class="appmycontainer" style="padding-left: 15%; padding-right: 15%; padding-top: 1%;">
+    <div class="appmycontainer" id="appmycontainer">
       <div id="apps-container">
         <a href="https://web.whatsapp.com" target="_blank">
           <i class="fa-brands fa-whatsapp"></i>
@@ -127,7 +126,7 @@
           </div>
         </a>
         <a href="https://netflix.com" target="_blank">
-          <img src="https://iili.io/HMIU1g2.png" style="height: 24px; width: 24px;">
+          <i class="fa-sharp fa-solid fa-n"></i>
           <div class="label">
             <span class="name">Netflix</span>
             <span class="url">netflix.com</span>
@@ -240,18 +239,15 @@
             <span class="url">docs.google.com/spreadsheets</span>
           </div>
         </a>
-      </div>
-     <a href="https://github.com/NeerajCodz" target="_blank">
+      </div>  
+      
+      <a href="https://github.com/NeerajCodz" target="_blank">
         <h3 class="txt-ne" style=" margin-left: 35%; margin-bottom: 0%;" >NeerajCodz ❤️ </h3>
       </a>
-    </div>
-    <div id="footer_logo" style="padding-left: 45%; padding-right: 50%; padding-top: 1%;">
-      <img src="/images/footer_logo.png"style="height: 30%;" class="centre" >
+      </div>
     </div>
    </div>
-  </div>
 </div>
-
   <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
   <script src="script.js"></script>
   <script src="/nav/jquery-1.10.2.js"></script>

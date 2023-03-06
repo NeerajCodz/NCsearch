@@ -38,7 +38,7 @@ $(document).ready(function() {
     var query = $(this).val();
     var suggestions = $('.suggestion');
     var activeSuggestion = $('.active');
-    if (query.length >= 2) {
+    if (query.length >= 1) {
       getSuggestions(query);
       if (e.keyCode === 38) { 
         // up arrow key
@@ -69,11 +69,9 @@ $(document).ready(function() {
     var text = $(this).text();
     $('#search-input').val(text);
     $('.suggestions').slideUp();
-  });
-  $(document).on('click', function(e) {
-    if (!$(e.target).hasClass('suggestion') && !$(e.target).hasClass('search')) {
-      $('.suggestions').slideUp();
-    }
+  
+    // Simulate a click event on the search button
+    $('#image-search-button').trigger('click');
   });
 });
 
