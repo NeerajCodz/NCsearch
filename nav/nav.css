@@ -268,3 +268,8 @@ vertical-align: baseline;
   font-size: 45px;
   margin: 5px 0;
 }
+
+#dark-theme-button > i {
+  padding: 0px;
+  width: 2rem;
+}

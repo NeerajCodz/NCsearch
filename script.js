@@ -1,3 +1,11 @@
+//DARK THEME
+var icon = document.getElementById("dark-theme-button");
+icon.onclick = function(){
+  document.body.classList.toggle("dark-root");
+  if(document.body.classList.contains("dark-root")){
+  }
+}
+
 //SEARCH ON ENTER
 var input = document.getElementById("search-input");
   input.addEventListener("keypress", function(event) {
@@ -65,13 +73,15 @@ $(document).ready(function() {
       $('.suggestions').slideUp();
     }
   });
-  $(document).on('click', '.suggestion', function() {
+  $(document).on('click', '.suggestion', function(event) {
+    event.preventDefault();
+    
     var text = $(this).text();
     $('#search-input').val(text);
     $('.suggestions').slideUp();
   
-    // Simulate a click event on the search button
-    $('#image-search-button').trigger('click');
+    // Trigger a click event on the search button
+    $('#image-search-button').click();
   });
 });
 
